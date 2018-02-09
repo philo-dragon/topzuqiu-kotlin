@@ -1,0 +1,101 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // ARouter 配置 1
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        // ARouter 配置 2
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    api"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    testApi 'junit:junit:4.12'
+    androidTestApi 'com.android.support.test:runner:0.5'
+    androidTestApi 'com.android.support.test.espresso:espresso-core:2.2.2'
+
+    api rootProject.ext.deps.multidex
+
+    api rootProject.ext.deps.design
+    api rootProject.ext.deps.supportV4
+    api rootProject.ext.deps.appcompatV7
+    api rootProject.ext.deps.recyclerviewV7
+    api rootProject.ext.deps.constraint
+
+    // Dagger2
+    api rootProject.ext.deps.dagger
+    annotationProcessor rootProject.ext.deps.dagger_compiler
+
+    // ARouter 配置 3
+    api rootProject.ext.deps.arouter
+    api rootProject.ext.deps.annotation
+    api rootProject.ext.deps.bottomNavigationBar
+
+    // RxJava2 Retrofit2 RxLifecycle
+    api rootProject.ext.deps.rxjava
+    api rootProject.ext.deps.rxandroid
+    api rootProject.ext.deps.retrofit
+    api rootProject.ext.deps.converter_gson
+    api rootProject.ext.deps.adapter_rxjava2
+    api rootProject.ext.deps.converter_scalars
+    api rootProject.ext.deps.rxlifecycle
+
+    // okhttp
+    api rootProject.ext.deps.okhttp
+    api rootProject.ext.deps.okio
+    api rootProject.ext.deps.logging_interceptor
+
+    // Glide
+    api rootProject.ext.deps.glide
+    annotationProcessor rootProject.ext.deps.glide_processor
+
+    // UI适配库
+    api rootProject.ext.deps.inflaterauto
+    annotationProcessor rootProject.ext.deps.inflaterauto_compiler
+
+    //鬣狗快速开发库
+    api rootProject.ext.deps.hyena
+    //工具类 http://www.jianshu.com/p/72494773aace
+    api rootProject.ext.deps.AndroidUtilCode
+    //下拉刷新库
+    api rootProject.ext.deps.SmartRefreshLayout
+    // 更改字体库
+    api rootProject.ext.deps.calligraphy
+    // 滑动返回库
+    api rootProject.ext.deps.swipebackhelper
+
+    api "cn.bingoogolapple:bga-banner:2.1.9@aar"
+
+}

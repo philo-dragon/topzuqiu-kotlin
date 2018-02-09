@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        // ARouter 配置 1
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        // ARouter 配置 2
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    /*if (!isModule.toBoolean()) {
+        implementation project(':module1')
+        implementation project(':module2')
+        implementation project(':module_user')
+    } else {
+        implementation project(':common')
+    }*/
+
+    implementation project(':common')
+
+    // ARouter 配置 3
+    annotationProcessor rootProject.ext.deps.arouter_compiler
+    annotationProcessor rootProject.ext.deps.dagger_compiler
+    annotationProcessor rootProject.ext.deps.inflaterauto_compiler
+
+}
