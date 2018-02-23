@@ -1,11 +1,8 @@
-package cn.pfl.component.ui.fragment;
+package cn.com.topzuqiu.ui.fragment;
 
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -14,12 +11,11 @@ import com.pfl.common.di.AppComponent;
 import com.pfl.common.entity.module_user.UserInfo;
 import com.pfl.common.service.ModuleUserRouteService;
 import com.pfl.common.utils.RouteUtils;
-import com.pfl.common.utils.StatusBarUtil;
-import com.pfl.common.weidget.TitleBar;
-import com.pfl.component.R;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+
+import cn.com.topzuqiu.R;
 
 /**
  * A simple {@link Fragment} subclass.

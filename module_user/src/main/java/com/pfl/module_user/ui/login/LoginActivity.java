@@ -15,22 +15,14 @@ import com.pfl.common.imageloader.glide.ImageConfigImpl;
 import com.pfl.common.utils.RouteUtils;
 import com.pfl.common.weidget.TitleBar;
 import com.pfl.component.R;
+import com.pfl.component.databinding.ActivityLoginBinding;
 import com.pfl.module_user.utils.AccountPasswordUtil;
 
 @Route(path = RouteUtils.MODULE_USER_LOGIN_ACTIVITY)
-public class LoginActivity extends BaseActivity {
-
+public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
     private ImageLoader imageLoader;
     private ImageView mCollectView;
-
-    private TextInputLayout tilAccount;
-    private TextInputLayout tilPassword;
-
-    private EditText etAccount;
-    private EditText etPassword;
-
-    private Button btnSubmit;
 
     @Override
     public void componentInject(AppComponent appComponent) {
@@ -45,19 +37,9 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void initView(View view) {
 
-        tilAccount = findViewById(R.id.til_account);
-        tilPassword = findViewById(R.id.til_password);
-
-        etAccount = findViewById(R.id.tv_account);
-        etPassword = findViewById(R.id.tv_password);
-
-        btnSubmit = findViewById(R.id.btn_submit);
-
-
-        ImageView imgUser = findViewById(R.id.img_user);
         imageLoader.loadImage(this, ImageConfigImpl.
                 builder().url("http://g.hiphotos.baidu.com/image/pic/item/c8ea15ce36d3d539f09733493187e950342ab095.jpg").
-                imageView(imgUser).
+                imageView(mBinding.imgUser).
                 build());
 
         TitleBar titleBar = findViewById(R.id.title_bar);
@@ -77,18 +59,16 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
-        AccountPasswordUtil.setAccount(etAccount, tilAccount);
-        AccountPasswordUtil.setPassword(etPassword, tilPassword);
+        AccountPasswordUtil.setAccount(mBinding.tvAccount, mBinding.tilAccount);
+        AccountPasswordUtil.setPassword(mBinding.tvPassword, mBinding.tilPassword);
 
-
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        mBinding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String account = etAccount.getText().toString().trim();
-                String password = etPassword.getText().toString().trim();
-                if (AccountPasswordUtil.veriftyAccount(account.toString(), tilAccount) &&
-                        AccountPasswordUtil.veriftyPassword(password.toString(), tilPassword)) {
+                String account = mBinding.tvAccount.getText().toString().trim();
+                String password = mBinding.tvPassword.getText().toString().trim();
+                if (AccountPasswordUtil.veriftyAccount(account, mBinding.tilAccount) &&
+                        AccountPasswordUtil.veriftyPassword(password, mBinding.tilPassword)) {
 
                     ToastUtils.showShort("登录成功");
                     finishActivity();

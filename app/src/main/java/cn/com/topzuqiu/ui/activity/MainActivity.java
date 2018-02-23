@@ -15,10 +15,11 @@ import com.pfl.common.base.BaseActivity;
 import com.pfl.common.di.AppComponent;
 import com.pfl.common.utils.RouteUtils;
 import com.pfl.common.utils.StatusBarUtil;
-import com.pfl.component.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.com.topzuqiu.R;
 
 
 @Route(path = RouteUtils.APP_MAIN_ACTIVITY)

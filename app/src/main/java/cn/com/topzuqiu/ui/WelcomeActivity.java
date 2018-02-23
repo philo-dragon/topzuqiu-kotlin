@@ -13,9 +13,9 @@ import com.blankj.utilcode.util.SPUtils;
 import com.pfl.common.utils.AppManager;
 import com.pfl.common.utils.RouteUtils;
 import com.pfl.common.utils.StatusBarUtil;
-import com.pfl.component.R;
 
 import cn.bingoogolapple.bgabanner.BGABanner;
+import cn.com.topzuqiu.R;
 import cn.com.topzuqiu.ui.activity.MainActivity;
 
 @Route(path = RouteUtils.APP_WELCOME_ACTIVITY)

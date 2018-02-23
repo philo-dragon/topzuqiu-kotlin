@@ -9,8 +9,8 @@ import android.view.View;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.blankj.utilcode.util.SPUtils;
 import com.pfl.common.utils.RouteUtils;
-import com.pfl.component.R;
 
+import cn.com.topzuqiu.R;
 import cn.com.topzuqiu.ui.activity.MainActivity;
 
 @Route(path = RouteUtils.APP_SPLASH_ACTIVITY)
