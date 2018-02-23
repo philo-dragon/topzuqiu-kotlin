@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 设置TextInputLayout计算器越位后的文字颜色和大小 -->
+    <style name="Text_Input_Layout_Hint_Error">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 设置TextInputLayout正常情况下的计数器文字颜色和大小 -->
+    <style name="Text_Input_Layout_Hint_Normal">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

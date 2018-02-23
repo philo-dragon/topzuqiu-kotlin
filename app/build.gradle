@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-
     compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
-        applicationId rootProject.ext.android.applicationId
+        applicationId "com.pfl.component"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -41,15 +43,13 @@ android {
 
 dependencies {
 
-    /*if (!isModule.toBoolean()) {
+    if (!isModule.toBoolean()) {
         implementation project(':module1')
         implementation project(':module2')
         implementation project(':module_user')
     } else {
         implementation project(':common')
-    }*/
-
-    implementation project(':common')
+    }
 
     // ARouter 配置 3
     annotationProcessor rootProject.ext.deps.arouter_compiler
