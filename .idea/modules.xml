@@ -3,17 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\workspace\topzuqiu-kotlin\app\app.iml" filepath="D:\workspace\topzuqiu-kotlin\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
-      <module fileurl="file://D:\workspace\topzuqiu-kotlin\common\common.iml" filepath="D:\workspace\topzuqiu-kotlin\common\common.iml" />
       <module fileurl="file://$PROJECT_DIR$/module1/module1.iml" filepath="$PROJECT_DIR$/module1/module1.iml" />
-      <module fileurl="file://D:\workspace\topzuqiu-kotlin\module1\module1.iml" filepath="D:\workspace\topzuqiu-kotlin\module1\module1.iml" />
       <module fileurl="file://$PROJECT_DIR$/module2/module2.iml" filepath="$PROJECT_DIR$/module2/module2.iml" />
-      <module fileurl="file://D:\workspace\topzuqiu-kotlin\module2\module2.iml" filepath="D:\workspace\topzuqiu-kotlin\module2\module2.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_user/module_user.iml" filepath="$PROJECT_DIR$/module_user/module_user.iml" />
-      <module fileurl="file://D:\workspace\topzuqiu-kotlin\module_user\module_user.iml" filepath="D:\workspace\topzuqiu-kotlin\module_user\module_user.iml" />
       <module fileurl="file://$PROJECT_DIR$/topzuqiu-kotlin.iml" filepath="$PROJECT_DIR$/topzuqiu-kotlin.iml" />
-      <module fileurl="file://D:\workspace\topzuqiu-kotlin\topzuqiu-kotlin.iml" filepath="D:\workspace\topzuqiu-kotlin\topzuqiu-kotlin.iml" />
     </modules>
   </component>
 </project>

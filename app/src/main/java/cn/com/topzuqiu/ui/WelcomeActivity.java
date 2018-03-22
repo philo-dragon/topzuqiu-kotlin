@@ -50,8 +50,7 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClickEnterOrSkip() {
                 // Activity使用ARouter启动另一个Activity 并finish掉自己会有闪烁问题
-                //RouteUtils.actionStart(RouteUtils.APP_MAIN_ACTIVITY, R.anim.alpha_enter, R.anim.alpha_exit);
-                MainActivity.actionStart(WelcomeActivity.this);
+                RouteUtils.actionStart(RouteUtils.APP_MAIN_ACTIVITY, R.anim.alpha_enter, R.anim.alpha_exit);
                 SPUtils.getInstance().put("isWelcome", true);
                 AppManager.getAppManager().finishActivity();
             }

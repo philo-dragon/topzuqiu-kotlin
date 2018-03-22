@@ -31,6 +31,10 @@ public class AppManager {
         return null == activityStack || activityStack.isEmpty();
     }
 
+    public Stack<Activity> getActivityStack() {
+        return activityStack;
+    }
+
     /**
      * 添加Activity到堆栈
      */
